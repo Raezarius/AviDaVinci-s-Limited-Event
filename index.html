@@ -39,16 +39,32 @@
         <!-- <div id="QWindow">
             <img src="resources/questWindow.png">
         </div> -->
-        <a-scene>
+        <a-scene vr-mode-ui="enabled: false">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
             </a-assets>
 
-            <a-image src="#QWindow" width="0.84" height="1"></a-image>
+            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="[camera]" onload="loadTime"></a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera id="camera"></a-camera>
             </a-entity>
         </a-scene>
+
+        <script>
+            var qwindow = document.querySelector('#qwImage');
+            var camera = document.querySelector('#camera');
+            var distance = 2; // Change this value to adjust the distance from the camera
+
+            const loadTime = setInterval(function() {
+                var cameraPos = camera.getAttribute('position');
+                var cameraRot = camera.getAttribute('rotation');
+                var xn = cameraPos.x - distance * Math.sin(cameraRot.y * Math.PI / 180) * Math.cos(cameraRot.x * Math.PI / 180);
+                var yn = cameraPos.y + distance * Math.sin(cameraRot.x * Math.PI / 180);
+                qwindow.setAttribute('position', { x: xn, y: yn, z: qwindow.getAttribute('position').z });
+                qwindow.setAttribute('rotation', cameraRot);
+            }, 10);
+        </script>
+
     </body>
 </html>
