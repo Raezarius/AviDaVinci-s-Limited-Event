@@ -54,13 +54,12 @@
         <script>
             var qwindow = document.querySelector('#qwImage');
             var camera = document.querySelector('#camera');
-            var distance = 2; // Change this value to adjust the distance from the camera
 
             const loadTime = setInterval(function() {
                 var cameraPos = camera.getAttribute('position');
                 var cameraRot = camera.getAttribute('rotation');
-                var xn = cameraPos.x - distance * Math.sin(cameraRot.y * Math.PI / 180) * Math.cos(cameraRot.x * Math.PI / 180);
-                var yn = cameraPos.y + distance * Math.sin(cameraRot.x * Math.PI / 180);
+                var xn = cameraPos.x;
+                var yn = cameraPos.y;
                 qwindow.setAttribute('position', { x: xn, y: yn, z: qwindow.getAttribute('position').z });
                 qwindow.setAttribute('rotation', cameraRot);
             }, 10);
