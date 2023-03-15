@@ -6,11 +6,49 @@
         <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     </head>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #QWindow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+        #QWindow img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+
     <body>
-        <p>
-            <a href="https://na.finalfantasyxiv.com/lodestone/playguide/db/item/55674b66cbf/" class="eorzeadb_link">
-                <img src="https://img.finalfantasyxiv.com/lds/pc/global/images/itemicon/6b/6b471727cbf3dc8c552bb8830795cd44e95108a5.png?n6.35">
-            </a>
-        </p>
+        <!-- <div id="QWindow">
+            <img src="resources/questWindow.png">
+        </div> -->
+        <a-scene>
+            <a-assets>
+                <img id="QWindow" src="resources/questWindow.png">
+            </a-assets>
+
+            <a-image src="#QWindow"></a-image>
+
+            <a-entity id="rig" position="25 10 0">
+                <a-camera id="camera"></a-camera>
+            </a-entity>
+        </a-scene>
     </body>
 </html>
