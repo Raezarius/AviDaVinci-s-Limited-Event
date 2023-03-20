@@ -35,20 +35,6 @@
             width: auto;
             height: auto;
         }
-
-        @font-face {
-            font-family: questFont;
-            src: url(resources/XIV_ASAS_R.otf);
-        }
-
-        p {
-            font-family: questFont;
-        }
-
-        .bottom {
-            position: absolute;
-            bottom: 15px;
-        }
     </style>
 
     <body>
@@ -64,10 +50,6 @@
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
-            </a-entity>
-
-            <a-entity htmlembed look-at="#camera">
-                <p class="bottom">You can read me!</p>
             </a-entity>
         </a-scene>
 
