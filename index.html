@@ -41,12 +41,16 @@
         <!-- <div id="QWindow">
             <img src="resources/questWindow.png">
         </div> -->
-        <a-scene vr-mode-ui="enabled: false">
+        <a-scene 
+         vr-mode-ui="enabled: false"
+         cursor="rayOrigin: mouse; fuse: false" 
+         raycaster="objects: .raycastable">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
             </a-assets>
             <a-sky color="#1B1B1B"></a-sky>
-            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera"></a-image>
+            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera"></a-image>   <!-- place 2 buttons at the bottom of the image and give them the class
+                                                                                                             raycastable. -->
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
