@@ -44,6 +44,11 @@
         p {
             font-family: questFont;
         }
+
+        .bottom {
+            position: absolute;
+            bottom: 15px;
+        }
     </style>
 
     <body>
@@ -64,8 +69,12 @@
             </a-entity>
 
             <a-entity htmlembed look-at="#camera">
-                <a-image id="qwImage" src="#QWindow" width="0.84" height="1"></a-image>
-                <p>You can read me!</p>
+                <a-image id="qwImage" src="#QWindow" width="0.84" height="1">
+                    <div class="bottom">
+                        <p>You can read me!</p>
+                    </div>
+                </a-image>
+                <!-- <p>You can read me!</p> -->
             </a-entity>
         </a-scene>
 
