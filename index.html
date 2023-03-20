@@ -6,6 +6,7 @@
         <script type="text/javascript" src="/AviDaVinci-s-Limited-Event/script.js" defer></script>
         <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+        <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
     </head>
 
     <style>
@@ -34,6 +35,11 @@
             width: auto;
             height: auto;
         }
+
+        p{
+            font-family: questFont;
+            src: url(resources/XIV_ASAS_R.otf);
+        }
     </style>
 
     <body>
@@ -45,12 +51,17 @@
                 <img id="QWindow" src="resources/questWindow.png">
             </a-assets>
             <a-sky color="#1B1B1B"></a-sky>
-            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
+            <!-- <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
                 <a-text value="Hello, world!" font="resources/XIV_ASAS_R.otf" font-image="undefined"></a-text>
-            </a-image>
+            </a-image> -->
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
+            </a-entity>
+
+            <a-entity htmlembed look-at="#camera">
+                <a-image id="qwImage" src="#QWindow" width="0.84" height="1"></a-image>
+                <p>You can read me!</p>
             </a-entity>
         </a-scene>
 
