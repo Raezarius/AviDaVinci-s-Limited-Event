@@ -60,18 +60,13 @@
                 <img id="QWindow" src="resources/questWindow.png">
             </a-assets>
             <a-sky color="#1B1B1B"></a-sky>
-            <!-- <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
-                <a-text value="Hello, world!" font="resources/XIV_ASAS_R.otf" font-image="undefined"></a-text>
-            </a-image> -->
+            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera"></a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
             </a-entity>
 
             <a-entity htmlembed look-at="#camera">
-                <a-image id="qwImage" src="#QWindow" width="0.84" height="1">
-                    <!-- <p class="bottom">You can read me!</p> -->
-                </a-image>
                 <p class="bottom">You can read me!</p>
             </a-entity>
         </a-scene>
