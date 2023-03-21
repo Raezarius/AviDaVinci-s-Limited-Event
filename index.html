@@ -38,6 +38,23 @@
         }
     </style>
 
+    <script>
+        AFRAME.registerComponent('accept', {
+            init: function () {
+            var data = this.data;
+            var el = this.el;
+
+            el.addEventListener('mouseenter', function () {
+                alert("woa");
+            });
+
+            el.addEventListener('click', function () {
+                alert("ACCEPTED");
+            });
+            }
+        });
+    </script>
+
     <body>
         <!-- <div id="QWindow">
             <img src="resources/questWindow.png">
@@ -51,33 +68,26 @@
             </a-assets>
             <a-sky color="#1B1B1B"></a-sky>
             <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
-                <a-plane htmlembed id="accept" 
+                <a-plane accept id="accept" 
                 class="raycastable"
                 transparent="true"
                 opacity="0.5"
                 height="0.035" width="0.225" 
                 position="-0.150, -0.325, 0.001" 
-                material="color: #ff000000; side: double; wireframe: true"
-                event-set__click="acceptQuest()"></a-plane>
+                material="color: #ff000000; side: double; wireframe: true"></a-plane>
 
-                <a-plane htmlembed id="decline" 
+                <a-plane id="decline" 
                 class="raycastable"
                 transparent="true"
                 opacity="0.5"
                 height="0.035" width="0.225" 
                 position="0.150, -0.325, 0.001" 
-                material="color: #ff000000; side: double; wireframe: true"
-                event-set__click="declineQuest()"></a-plane>
+                material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
             </a-entity>
         </a-scene>
-
-        <script>
-            
-        </script>
-
     </body>
 </html>
