@@ -57,7 +57,8 @@
                 opacity="0.5"
                 height="0.035" width="0.225" 
                 position="-0.150, -0.325, 0.001" 
-                material="color: #ff000000; side: double; wireframe: true"><div onclick="acceptQuest()"></div></a-plane>
+                material="color: #ff000000; side: double; wireframe: true"
+                event-set__click="acceptQuest()"></a-plane>
 
                 <a-plane htmlembed id="decline" 
                 class="raycastable"
@@ -65,7 +66,8 @@
                 opacity="0.5"
                 height="0.035" width="0.225" 
                 position="0.150, -0.325, 0.001" 
-                material="color: #ff000000; side: double; wireframe: true"><div onclick="declineQuest()"></div></a-plane>
+                material="color: #ff000000; side: double; wireframe: true"
+                event-set__click="declineQuest()"></a-plane>
             </a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
