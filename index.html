@@ -55,6 +55,8 @@
     </style>
 
     <script>
+        var aEL;
+        var dEL;
         AFRAME.registerComponent('accept', {
             init: function () {
             var data = this.data;
@@ -63,6 +65,7 @@
             function onMEnterA(){
                 mOverSFX();
             }
+            aEL = onMEnterA();
 
             el.addEventListener('mouseenter', onMEnterA);
 
@@ -81,6 +84,7 @@
             function onMEnterD(){
                 mOverSFX();
             }
+            dEL = onMEnterD();
 
             el.addEventListener('mouseenter', onMEnterD);
 
