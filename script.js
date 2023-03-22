@@ -39,8 +39,8 @@ function compAcquisition(){
 	let a = document.querySelector("#accept");
 	let d = document.querySelector("#decline");
 
-	a.setAttribute("accept");
-	d.setAttribute("decline");
+	a.setAttribute("accept", '');
+	d.setAttribute("decline", '');
 }
 
 function compRemoval(){
