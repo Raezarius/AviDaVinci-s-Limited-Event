@@ -11,6 +11,7 @@ function declineQuest(){
 }
 
 function mOverSFX(){
+	document.getElementById("mOver").volume = 0.45;
     let x = document.getElementById("mOver");
 			x.currentTime = 0;
 			x.play();
@@ -30,8 +31,4 @@ function congrats(){
 
 function openForms(){
 	window.location.href = "https://www.youtube.com";
-}
-
-function setVol(){
-	document.getElementById("mOver").volume = 0.45;
 }
