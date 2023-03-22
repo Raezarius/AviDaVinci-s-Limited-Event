@@ -65,8 +65,8 @@
             });
 
             el.addEventListener('click', function () {
-                acceptQuest();
-                setTimeout(openForms, 5500);
+                buttClick();
+                // setTimeout(openForms, 5500);
             });
             }
         });
@@ -118,7 +118,7 @@
             </a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
-                <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
+                <a-camera look-controls wasd-controls-enabled="false" touch-controls-enabled="false" id="camera"></a-camera>
             </a-entity>
         </a-scene>
     </body>
