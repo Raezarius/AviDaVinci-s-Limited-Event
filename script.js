@@ -41,9 +41,9 @@ function compRemoval(){
 	let a = document.querySelector("#accept");
 	let d = document.querySelector("#decline");
 
-	var acceptFunc = a.components["accept"].onMEnterA;
+	var acceptFunc = a.components["accept"].onMEnterA();
 	a.removeEventListener("mouseenter", acceptFunc);
-	var declineFunc = d.components["decline"].onMEnterD;
+	var declineFunc = d.components["decline"].onMEnterD();
 	d.removeEventListener("mouseenter", declineFunc);
 
 	a.removeAttribute("accept");
