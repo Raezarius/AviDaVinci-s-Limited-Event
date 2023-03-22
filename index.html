@@ -62,6 +62,10 @@
             init: function () {
             var data = this.data;
             var el = this.el;
+
+            el.addEventListener('click', function (evt) {
+                mOverSFX();
+            });
             },
 
             events: {
