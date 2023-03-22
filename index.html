@@ -63,12 +63,12 @@
             var data = this.data;
             var el = this.el;
 
-            function onMEnterA(){
-                mOverSFX();
-            }
-            aEL = onMEnterA();
+            // function onMEnterA(){
+            //     mOverSFX();
+            // }
+            // aEL = onMEnterA();
 
-            el.addEventListener('mouseenter', onMEnterA);
+            // el.addEventListener('mouseenter', onMEnterA);
 
             // el.addEventListener('click', function () {
             //     buttAccept();
@@ -77,6 +77,10 @@
             },
 
             events: {
+                mouseenter: function (evt){
+                    mOverSFX();
+                },
+
                 click: function (evt){
                     buttAccept();
                 }
