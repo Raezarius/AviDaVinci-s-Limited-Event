@@ -60,9 +60,11 @@
             var data = this.data;
             var el = this.el;
 
-            el.addEventListener('mouseenter', function () {
+            function onMEnterA(){
                 mOverSFX();
-            });
+            }
+
+            el.addEventListener('mouseenter', onMEnterA);
 
             el.addEventListener('click', function () {
                 buttAccept();
@@ -76,15 +78,21 @@
             var data = this.data;
             var el = this.el;
 
-            el.addEventListener('mouseenter', function () {
+            function onMEnterD(){
                 mOverSFX();
-            });
+            }
+
+            el.addEventListener('mouseenter', onMEnterD);
 
             el.addEventListener('click', function () {
                 declineQuest();
                 var qw = document.querySelector("#qwImage");
                 qw.setAttribute("visible", false);
-                qw.children.setAttribute("raycastable", false);
+                compRemoval();
+                // el.removeEventListener('mouseenter', onMEnterD);
+                // var acceptButton = document.querySelector("#accept");
+                // var listeningFunc = acceptButton.components["accept"].listeningFunc;
+                // acceptButton.removeEventListener("mouseenter", listeningFunc);
             });
             }
         });
@@ -109,7 +117,7 @@
             // Trigger an event or update the scene here
             var qw = document.querySelector("#qwImage");
                 qw.setAttribute("visible", true);
-                qw.setAttribute("raycastable", true);
+                compAcquisition();
             }
         }
         });

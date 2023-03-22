@@ -29,6 +29,22 @@ function congrats(){
 			x.play();
 }
 
+function compAcquisition(){
+	let a = document.querySelector("#accept");
+	let d = document.querySelector("#decline");
+
+	a.setAttribute("accept");
+	d.setAttribute("decline");
+}
+
+function compRemoval(){
+	let a = document.querySelector("#accept");
+	let d = document.querySelector("#decline");
+
+	a.removeAttribute("accept");
+	d.removeAttribute("decline");
+}
+
 function openForms(){
 	window.location.href = "https://www.youtube.com";
 }
