@@ -24,6 +24,9 @@
         <audio id="qComplete">
             <source src="resources/FFXIV_Quest_Complete.mp3" type="audio/mp3">
         </audio>
+        <audio id="oWindow">
+            <source src="resources/FFXIV_Open_Window.mp3" type="audio/mp3">
+        </audio>
     </head>
 
     <style>
@@ -55,25 +58,10 @@
     </style>
 
     <script>
-        var aEL;
-        var dEL;
-
         AFRAME.registerComponent('accept', {
             init: function () {
             var data = this.data;
             var el = this.el;
-
-            // function onMEnterA(){
-            //     mOverSFX();
-            // }
-            // aEL = onMEnterA();
-
-            // el.addEventListener('mouseenter', onMEnterA);
-
-            // el.addEventListener('click', function () {
-            //     buttAccept();
-            //     setTimeout(openForms, 5500);
-            // });
             },
 
             events: {
@@ -91,24 +79,17 @@
             init: function () {
             var data = this.data;
             var el = this.el;
+            },
 
-            function onMEnterD(){
-                mOverSFX();
-            }
-            dEL = onMEnterD();
+            events: {
+                mouseenter: function (evt){
+                    mOverSFX();
+                },
 
-            el.addEventListener('mouseenter', onMEnterD);
-
-            el.addEventListener('click', function () {
-                declineQuest();
-                var qw = document.querySelector("#qwImage");
-                qw.setAttribute("visible", false);
-                compRemoval();
-                el.removeEventListener('mouseenter', onMEnterD);
-                var acceptButton = document.querySelector("#accept");
-                // var listeningFunc = acceptButton.components["accept"].listeningFunc;
-                acceptButton.removeEventListener("mouseenter", aEL);
-            });
+                click: function (evt){
+                    declineQuest();
+                    compRemoval();
+                }
             }
         });
 
@@ -133,6 +114,7 @@
             var qw = document.querySelector("#qwImage");
                 qw.setAttribute("visible", true);
                 compAcquisition();
+                openWindow();
             }
         }
         });

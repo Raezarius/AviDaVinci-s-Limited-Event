@@ -29,6 +29,12 @@ function congrats(){
 			x.play();
 }
 
+function openWindow(){
+	let x = document.getElementById("oWindow");
+			x.currentTime = 0;
+			x.play();
+}
+
 function compAcquisition(){
 	let a = document.querySelector("#accept");
 	let d = document.querySelector("#decline");
