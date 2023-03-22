@@ -84,7 +84,7 @@
                 declineQuest();
                 var qw = document.querySelector("#qwImage");
                 qw.setAttribute("visible", false);
-                qw.setAttribute("raycastable", false);
+                qw.children.setAttribute("raycastable", false);
             });
             }
         });
@@ -105,9 +105,11 @@
             );
 
             // Check if the total acceleration is above a certain threshold
-            if (totalAcceleration > 20) {
+            if (totalAcceleration > 25) {
             // Trigger an event or update the scene here
-            alert('Shake detected!');
+            var qw = document.querySelector("#qwImage");
+                qw.setAttribute("visible", true);
+                qw.setAttribute("raycastable", true);
             }
         }
         });
