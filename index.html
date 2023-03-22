@@ -94,9 +94,9 @@
                 qw.setAttribute("visible", false);
                 compRemoval();
                 el.removeEventListener('mouseenter', onMEnterD);
-                // var acceptButton = document.querySelector("#accept");
-                // var listeningFunc = acceptButton.components["accept"].listeningFunc;
-                // acceptButton.removeEventListener("mouseenter", listeningFunc);
+                var acceptButton = document.querySelector("#accept");
+                var listeningFunc = acceptButton.components["accept"].listeningFunc;
+                acceptButton.removeEventListener("mouseenter", listeningFunc);
             });
             }
         });
