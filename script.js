@@ -11,7 +11,7 @@ function declineQuest(){
 }
 
 function mOverSFX(){
-	document.getElementById("mOver").volume = 0.45;
+	document.getElementById("mOver").volume = 0.25;
     let x = document.getElementById("mOver");
 			x.currentTime = 0;
 			x.play();
