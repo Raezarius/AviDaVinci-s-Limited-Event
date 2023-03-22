@@ -84,8 +84,32 @@
                 declineQuest();
                 var qw = document.querySelector("#qwImage");
                 qw.setAttribute("visible", false);
+                qw.setAttribute("raycastable", false);
             });
             }
+        });
+
+        AFRAME.registerComponent('shake', {
+        init: function () {
+            window.addEventListener('devicemotion', this.onDeviceMotion.bind(this));
+        },
+        onDeviceMotion: function (event) {
+            // Get the acceleration including gravity from the DeviceMotionEvent
+            var acceleration = event.accelerationIncludingGravity;
+
+            // Calculate the total acceleration
+            var totalAcceleration = Math.sqrt(
+            Math.pow(acceleration.x, 2) +
+            Math.pow(acceleration.y, 2) +
+            Math.pow(acceleration.z, 2)
+            );
+
+            // Check if the total acceleration is above a certain threshold
+            if (totalAcceleration > 20) {
+            // Trigger an event or update the scene here
+            alert('Shake detected!');
+            }
+        }
         });
     </script>
 
@@ -94,6 +118,7 @@
             <img src="resources/questWindow.png">
         </div> -->
         <a-scene 
+         shake
          vr-mode-ui="enabled: false"
          cursor="rayOrigin: mouse; fuse: false" 
          raycaster="objects: .raycastable">
