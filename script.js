@@ -32,7 +32,6 @@ function openForms(){
 	window.location.href = "https://www.youtube.com";
 }
 
-const volSet = function setVol(){
+function setVol(){
 	document.getElementById("mOver").volume = 0.45;
-	alert(document.getElementById("mOver").volume);
 }
