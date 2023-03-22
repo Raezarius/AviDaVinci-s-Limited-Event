@@ -57,6 +57,7 @@
     <script>
         var aEL;
         var dEL;
+
         AFRAME.registerComponent('accept', {
             init: function () {
             var data = this.data;
@@ -73,6 +74,24 @@
                 buttAccept();
                 // setTimeout(openForms, 5500);
             });
+            const observer = new MutationObserver(function(mutations) {
+            // Check if the entity is visible
+            const isVisible = el.object3D.visible;
+            
+            // Do something based on the visibility
+            if (isVisible) {
+                console.log('The entity is visible!');
+            } else {
+                alert('The entity is hidden!');
+                el.removeEventListener('mouseenter', onMEnterA);
+                
+                // Remove the observer if the entity is hidden
+                observer.disconnect();
+            }
+            });
+            
+            // Start watching for changes to the visibility of the entity
+            observer.observe(el.object3D, { attributes: true, attributeFilter: ['visible'] });
             }
         });
 
