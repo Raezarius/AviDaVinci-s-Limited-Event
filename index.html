@@ -87,6 +87,8 @@
                 },
 
                 click: function (evt){
+                    var qw = document.querySelector("#qwImage");
+                    qw.setAttribute("visible", false);
                     declineQuest();
                     compRemoval();
                 }
