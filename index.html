@@ -8,6 +8,22 @@
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
         <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+        <audio id="qAccept">
+            <source src="/resources/FFXIV_Quest_Accepted.mp3" type="audio/mp3">
+        </audio>
+        <audio id="qDecline">
+            <source src="resources/FFXIV_Cancel.mp3" type="audio/mp3">
+        </audio>
+        <audio id="mOver">
+            <source src="/resources/FFXIV_Switch_Target.mp3" type="audio/mp3">
+        </audio>
+        <audio id="buttClick">
+            <source src="/resources/FFXIV_Confirm.mp3" type="audio/mp3">
+        </audio>
+        <audio id="qComplete">
+            <source src="resources/FFXIV_Quest_Complete.mp3" type="audio/mp3">
+        </audio>
     </head>
 
     <style>
@@ -45,11 +61,27 @@
             var el = this.el;
 
             el.addEventListener('mouseenter', function () {
-                alert("woa");
+                mOverSFX();
             });
 
             el.addEventListener('click', function () {
-                alert("ACCEPTED");
+                acceptQuest();
+                setTimeout(openForms, 5500);
+            });
+            }
+        });
+
+        AFRAME.registerComponent('decline', {
+            init: function () {
+            var data = this.data;
+            var el = this.el;
+
+            el.addEventListener('mouseenter', function () {
+                mOverSFX();
+            });
+
+            el.addEventListener('click', function () {
+                declineQuest();
             });
             }
         });
@@ -76,7 +108,7 @@
                 position="-0.150, -0.325, 0.001" 
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
 
-                <a-plane id="decline" 
+                <a-plane decline id="decline" 
                 class="raycastable"
                 transparent="true"
                 opacity="0.5"
