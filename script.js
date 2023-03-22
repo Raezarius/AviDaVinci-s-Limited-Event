@@ -34,4 +34,5 @@ function openForms(){
 
 const volSet = function setVol(){
 	document.getElementById("mOver").volume = 0.45;
+	alert(document.getElementById("mOver").volume);
 }
