@@ -140,7 +140,7 @@
                 <img id="sky" src="resources/skyMoon.jpg">
             </a-assets>
             <!-- <a-sky color="#1B1B1B"></a-sky> -->
-            <a-sky src="#sky"></a-sky>
+            <a-sky src="#sky" phi-start="90"></a-sky>
 
             <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
                 <a-plane accept id="accept" 
@@ -160,7 +160,7 @@
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
 
-            <a-image id="NPC" src="#moogle" width="0.56" height="1" look-at="#camera"></a-image>
+            <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -10" look-at="#camera"></a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
