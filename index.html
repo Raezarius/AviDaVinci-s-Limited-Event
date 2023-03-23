@@ -140,10 +140,10 @@
                 <img id="sky" src="resources/skyMoon.jpg">
             </a-assets>
             <!-- <a-sky color="#1B1B1B"></a-sky> -->
-            <a-sky src="#sky" phi-start="90"></a-sky>
+            <a-sky src="#sky" phi-start="-90"></a-sky>
 
-            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
-                <a-plane accept id="accept" 
+            <a-image id="qwImage" src="#QWindow" width="0.84" height="1" visible="false" look-at="#camera">
+                <a-plane id="accept" 
                 class="raycastable"
                 transparent="true"
                 opacity="0.5"
@@ -151,7 +151,7 @@
                 position="-0.150, -0.325, 0.001" 
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
 
-                <a-plane decline id="decline" 
+                <a-plane id="decline" 
                 class="raycastable"
                 transparent="true"
                 opacity="0.5"
@@ -160,7 +160,7 @@
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
 
-            <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -10" look-at="#camera"></a-image>
+            <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -5" look-at="#camera"></a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
