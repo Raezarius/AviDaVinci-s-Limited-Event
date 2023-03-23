@@ -91,7 +91,6 @@
                     qw.setAttribute("visible", false);
                     declineQuest();
                     compRemoval();
-                    // setTimeout(compAcquisition, 2000);
                 }
             }
         });
@@ -99,7 +98,7 @@
         AFRAME.registerComponent('shake', {
         init: function () {
             window.addEventListener('devicemotion', this.onDeviceMotion.bind(this));
-        },
+            },
         onDeviceMotion: function (event) {
             // Get the acceleration including gravity from the DeviceMotionEvent
             var acceleration = event.accelerationIncludingGravity;
@@ -113,13 +112,16 @@
 
             // Check if the total acceleration is above a certain threshold
             if (totalAcceleration > 25) {
-            // Trigger an event or update the scene here
-            var qw = document.querySelector("#qwImage");
-                qw.setAttribute("visible", true);
-                compAcquisition();
-                openWindow();
+                // Trigger an event or update the scene here
+                var qw = document.querySelector("#qwImage"); //this was the last thing you did, so check if this works
+                if(qw.object3D.visible == false){
+                    qw.setAttribute("visible", true);
+                    compAcquisition();
+                    openWindow();
+                }
+                else{};
+                }
             }
-        }
         });
     </script>
 
