@@ -111,9 +111,9 @@
             );
 
             // Check if the total acceleration is above a certain threshold
-            if (totalAcceleration > 25) {
+            if (totalAcceleration > 30) {
                 // Trigger an event or update the scene here
-                var qw = document.querySelector("#qwImage"); //this was the last thing you did, so check if this works
+                var qw = document.querySelector("#qwImage"); 
                 if(qw.object3D.visible == false){
                     qw.setAttribute("visible", true);
                     compAcquisition();
@@ -136,8 +136,12 @@
          raycaster="objects: .raycastable">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
+                <img id="moogle" src="resources/delMoog.png">
+                <img id="sky" src="resources/skyMoon.jpg">
             </a-assets>
-            <a-sky color="#1B1B1B"></a-sky>
+            <!-- <a-sky color="#1B1B1B"></a-sky> -->
+            <a-sky src="#sky"></a-sky>
+
             <a-image id="qwImage" src="#QWindow" width="0.84" height="1" look-at="#camera">
                 <a-plane accept id="accept" 
                 class="raycastable"
@@ -155,6 +159,8 @@
                 position="0.150, -0.325, 0.001" 
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
+
+            <a-image id="NPC" src="#moogle" width="0.56" height="1" look-at="#camera"></a-image>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
