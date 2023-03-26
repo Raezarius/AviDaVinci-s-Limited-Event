@@ -136,7 +136,7 @@
          raycaster="objects: .raycastable">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
-                <img id="moogle" src="resources/delMoog.png">
+                <img id="moogle" src="resources/GIF.gif">
                 <img id="sky" src="resources/skyMoon.jpg">
             </a-assets>
             <!-- <a-sky color="#1B1B1B"></a-sky> -->
@@ -194,7 +194,7 @@
             // Calculate the text's position based on the camera's position and rotation
             var textPosition = {
             x: cameraPosition.x - Math.sin(cameraRotation.y * Math.PI / 180) * 1,
-            y: cameraPosition.y,
+            y: -1.6,
             z: cameraPosition.z - Math.cos(cameraRotation.y * Math.PI / 180) * 1
             };
 
