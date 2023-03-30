@@ -114,7 +114,9 @@
             if (totalAcceleration > 30) {
                 // Trigger an event or update the scene here
                 var qw = document.querySelector("#qwImage"); 
+                var st = document.querySelector("#followText");
                 if(qw.object3D.visible == false){
+                    st.setAttribute("visible", false);
                     qw.setAttribute("visible", true);
                     compAcquisition();
                     openWindow();
@@ -136,8 +138,10 @@
          raycaster="objects: .raycastable">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
-                <img id="moogle" src="resources/GIF.gif">
+                <!-- <img id="moogle" src="resources/GIF.gif"> -->
                 <img id="sky" src="resources/skyMoon.jpg">
+
+                <video id="moogle" autoplay loop="true" src="resources/MP4.mp4"></video>
             </a-assets>
             <!-- <a-sky color="#1B1B1B"></a-sky> -->
             <a-sky src="#sky" phi-start="-90"></a-sky>
@@ -162,9 +166,11 @@
 
             <a-text billboard id="followText" value="Shake me!" color="white" font="kelsonsans" animation="property: opacity; to: 1; from: 0; dir: alternate; dur: 1000; loop: true; easing: linear;"></a-text>
 
-            <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -2" look-at="#camera">
-                <!-- next up is to make a dialogue function + Quest Accepted popup -->
-            </a-image>
+            <!-- <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -2" look-at="#camera">
+                next up is to make a dialogue function + Quest Accepted popup
+            </a-image> -->
+
+            <a-video id="NPC" src="#moogle" width="16" height="9" position="0, 0, -2" look-at="#camera"></a-video>
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
