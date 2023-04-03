@@ -207,9 +207,9 @@
 
             // Calculate the text's position based on the camera's position and rotation
             var textPosition = {
-            x: 1,   // x: cameraPosition.x - Math.sin(cameraRotation.y * Math.PI / 180) * 2,
+            x: 0.5,   // x: cameraPosition.x - Math.sin(cameraRotation.y * Math.PI / 180) * 2,
             y: 0 - Math.sin(cameraRotation.y * Math.PI / 12.25),
-            z: -0.5    // z: cameraPosition.z - Math.cos(cameraRotation.y * Math.PI / 180) * 2
+            z: -1    // z: cameraPosition.z - Math.cos(cameraRotation.y * Math.PI / 180) * 2
             };
 
             // Update the text's position
