@@ -58,5 +58,7 @@ function openForms(){
 function startQ(){
 	var scene = document.querySelector('a-scene');
 	scene.setAttribute('NPCMove', '');
-	document.querySelector('#butt').setAttribute('visible', false);
+	var delThis = document.querySelector('#butt');
+	scene.removeChild(delThis);
+	document.querySelector('#followText').setAttribute('visible', true);
 }

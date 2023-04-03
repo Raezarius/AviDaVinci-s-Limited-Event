@@ -175,16 +175,10 @@
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
 
-            <a-text billboard id="followText" value="Shake me!" color="white" font="kelsonsans" animation="property: opacity; to: 1; from: 0; dir: alternate; dur: 1000; loop: true; easing: linear;"></a-text>
+            <a-text billboard id="followText" value="Shake me!" color="white" font="kelsonsans" visible="false" animation="property: opacity; to: 1; from: 0; dir: alternate; dur: 1000; loop: true; easing: linear;"></a-text>
             <a-entity class="raycastable" id="butt" htmlembed='ppu:256'>
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
-
-            <!-- <a-image id="NPC" src="#moogle" width="0.56" height="1" position="0, 0, -2" look-at="#camera">
-                next up is to make a dialogue function + Quest Accepted popup **this will have to wait for a bit
-            </a-image> -->
-
-            <!-- <a-video src="#moogle" width="1.2" height="1.2" position="0 0 -1" shader="flat"></a-video> -->
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
@@ -213,9 +207,9 @@
 
             // Calculate the text's position based on the camera's position and rotation
             var textPosition = {
-            x: cameraPosition.x - Math.sin(cameraRotation.y * Math.PI / 180) * 2,
+            x: 1,   // x: cameraPosition.x - Math.sin(cameraRotation.y * Math.PI / 180) * 2,
             y: 0 - Math.sin(cameraRotation.y * Math.PI / 12.25),
-            z: cameraPosition.z - Math.cos(cameraRotation.y * Math.PI / 180) * 2
+            z: -0.5    // z: cameraPosition.z - Math.cos(cameraRotation.y * Math.PI / 180) * 2
             };
 
             // Update the text's position
