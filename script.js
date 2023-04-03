@@ -54,3 +54,8 @@ function compRemoval(){
 function openForms(){
 	window.location.href = "https://www.youtube.com";
 }
+
+function startQ(){
+	var scene = document.querySelector('a-scene');
+	scene.setAttribute('NPCMove', '');
+}
