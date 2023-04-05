@@ -68,6 +68,7 @@ function dialogueStart(){
 	var camView = document.querySelector('#camera');
 	var textBox = document.createElement("a-image");
 
+	textBox.setAttribute('class', 'raycastable');
 	textBox.setAttribute('id', 'dialogue');
 	textBox.setAttribute('src', '#tb1');
 	textBox.setAttribute('position', '0.03, -0.45, -1.05');
