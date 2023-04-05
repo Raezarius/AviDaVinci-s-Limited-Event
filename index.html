@@ -267,7 +267,7 @@
             var gText = this.el;
 
             var initialRotation = gText.getAttribute('rotation').x;
-            var cameraRotation = cameraEl.getAttribute('rotation').x;
+            var cameraRotation = cameraEl.getAttribute('rotation').y;
 
             // Calculate the rotation difference between the camera and the text entity
             var rotationDifference = Math.abs(cameraRotation - initialRotation);
@@ -292,7 +292,7 @@
             var gText = this.el;
 
             var initialRotation = gText.getAttribute('rotation').y;
-            var cameraRotation = cameraEl.getAttribute('rotation').y;
+            var cameraRotation = cameraEl.getAttribute('rotation').x;
 
             // Calculate the rotation difference between the camera and the text entity
             var rotationDifference = Math.abs(cameraRotation - initialRotation);
