@@ -175,11 +175,16 @@
                 material="color: #ff000000; side: double; wireframe: true"></a-plane>
             </a-image>
 
-            <a-text billboard id="followText" value="Shake me!" color="white" font="kelsonsans" visible="false" animation="property: opacity; to: 1; from: 0; dir: alternate; dur: 1000; loop: true; easing: linear;"></a-text>
+            <a-text billboard id="followText" value="Shake me!" 
+              color="white" font="kelsonsans" visible="false" 
+              animation="property: opacity; to: 1; from: 0; dir: alternate; dur: 1000; loop: true; easing: linear;"></a-text>
             <a-entity class="raycastable" id="butt" htmlembed='ppu:256'>
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
 
+            <a-text class="guideText" position="0, 0, 0" rotation="-90, 0, 0" value="Look Up!"></a-text>
+
+                                                    <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
             </a-entity>
@@ -232,7 +237,7 @@
             vidStart.setAttribute("shader", "flat");
             vidStart.setAttribute("autoplay", "");
             vidStart.setAttribute("loop", "true");
-            vidStart.setAttribute("look-at", "#camera");        //next, you gotta make a TAP TO START function to set this component in a-scene
+            vidStart.setAttribute("look-at", "#camera");       
         
             var sceneEl = document.querySelector('a-scene');
             sceneEl.appendChild(vidStart);
