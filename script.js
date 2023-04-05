@@ -61,8 +61,9 @@ function startQ(){
 	var delThis = document.querySelector('#butt');
 	scene.removeChild(delThis);
 	document.querySelector('#followText').setAttribute('visible', true);
+	scene.setAttribute('shake', '');
 }
 
 function dialogueStart(){
-	
+
 }
