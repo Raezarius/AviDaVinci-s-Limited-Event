@@ -147,15 +147,6 @@
                 }
             }
         });
-
-        AFRAME.registerComponent("overlay", {
-        dependencies: ['material'],
-        init: function () {
-          this.el.sceneEl.renderer.sortObjects = true;
-          this.el.object3D.renderOrder = 100;
-          this.el.components.material.material.depthTest = false;
-        }
-      });
     </script>
 
     <body>
@@ -221,10 +212,9 @@
             <a-text class="guideTextX" id="LLeft" position="1.5, 0, 0.5" rotation="0, -90, 0" value="Look Left!"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
-                                                    <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera">
-                    <a-image id="dialogue" src="#tb1" position="0, 0, -1"
+                    <a-image id="dialogue" src="#tb1" position="0, -1, -0.5"
                       width="1" height="0.279" material="shader: flat"></a-image>
                 </a-camera>
             </a-entity>
