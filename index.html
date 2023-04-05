@@ -147,6 +147,15 @@
                 }
             }
         });
+
+        AFRAME.registerComponent("overlay", {
+        dependencies: ['material'],
+        init: function () {
+          this.el.sceneEl.renderer.sortObjects = true;
+          this.el.object3D.renderOrder = 100;
+          this.el.components.material.material.depthTest = false;
+        }
+      });
     </script>
 
     <body>
@@ -161,9 +170,9 @@
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
                 <!-- <img id="moogle" src="resources/GIF.gif"> -->
-                <!-- <img id="tb1" src="resources/textboxes/textbox1.png">
+                <img id="tb1" src="resources/textboxes/textbox1.png">
                 <img id="tb2" src="resources/textboxes/textbox2.png">
-                <img id="tb3" src="resources/textboxes/textbox3.png"> -->
+                <img id="tb3" src="resources/textboxes/textbox3.png">
                 <img id="sky" src="resources/skyMoon.jpg">
 
                 <video id="moogle" autoplay webkit-playsinline playsinline loop="true" src="resources/MP4.mp4"></video>
@@ -215,9 +224,7 @@
                                                     <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera">
-                    <a-entity class="raycastable" id="tBox1" htmlembed="ppu: 256">
-                        <img src="resources/textboxes/textbox1.png">
-                    </a-entity>
+                    <a-image id="dialogue" src="#tb1"></a-image>
                 </a-camera>
             </a-entity>
         </a-scene>
