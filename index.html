@@ -144,7 +144,7 @@
 
                 if(counter == 2){
                     //put a reminder.png here
-                    alert("REMINDER XD");
+                    alert("REMINDER PLACE QUEST ACCEPTED & ANIMATION XD");
                 }
                 }
             }
@@ -164,7 +164,7 @@
                         bg.removeAttribute('diaLogic', '');
                         touchNPC.removeAttribute('class', 'raycastable');
                         touchNPC.removeAttribute('diaLogic', '');
-                        tBox.removeAttribute('diaLogic', '');
+                        tBox.removeAttribute('diaLogic', '');                       //next up, quest accepted animation to the timing of the jingle, around ~~3.5sec ish
                         tBox.removeAttribute('class', 'raycastable');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
@@ -309,8 +309,6 @@
             sceneEl.appendChild(vidStart);
         }
         });
-
-        // var gText = document.getElementsByClassName('guideTextY');
 
         var initialOpacity = 0;
         var targetOpacity = 1;
