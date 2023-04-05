@@ -68,6 +68,7 @@ function dialogueStart(){
 	var camView = document.querySelector('#camera');
 	var textBox = document.createElement("a-image");
 	var bgTouch = document.querySelector('a-sky');
+	var touchNPC = document.querySelector('#NPC');
 
 	textBox.setAttribute('diaLogic', '');
 	textBox.setAttribute('class', 'raycastable');
@@ -81,4 +82,6 @@ function dialogueStart(){
 	camView.appendChild(textBox);
 	bgTouch.setAttribute('diaLogic', '');
 	bgTouch.setAttribute('class', 'raycastable');
+	touchNPC.setAttribute('diaLogic', '');
+	touchNPC.setAttribute('class', 'raycastable');
 }

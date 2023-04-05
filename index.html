@@ -142,8 +142,9 @@
                     else{};
                 }
 
-                if(counter == 1){
+                if(counter == 2){
                     //put a reminder.png here
+                    alert("REMINDER XD");
                 }
                 }
             }
@@ -154,20 +155,36 @@
             events: {
                 click: function (evt){
                     var bg = document.querySelector('a-sky');
-                    var tBox = document.querySelector('#dialogue')
+                    var touchNPC = document.querySelector('#NPC');
+                    var tBox = document.querySelector('#dialogue');
+                    var camView = document.querySelector('#camera');
                     mOverSFX();
                     if(currentNum == 3){
                         bg.removeAttribute('class', 'raycastable');
                         bg.removeAttribute('diaLogic', '');
+                        touchNPC.removeAttribute('class', 'raycastable');
+                        touchNPC.removeAttribute('diaLogic', '');
                         tBox.removeAttribute('diaLogic', '');
                         tBox.removeAttribute('class', 'raycastable');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
+                        counter+=1;
                         return;
                     }
-                    tBox.removeAttribute('src', '#tb' + `${currentNum}`);
+                    camView.removeChild(tBox);
                     currentNum+=1;
-                    tBox.setAttribute('src', 'tb'+`${currentNum}`);
+
+                    var textBox = document.createElement("a-image");
+                    textBox.setAttribute('diaLogic', '');
+                    textBox.setAttribute('class', 'raycastable');
+                    textBox.setAttribute('id', 'dialogue');
+                    textBox.setAttribute('src', '#tb'+`${currentNum}`);
+                    textBox.setAttribute('position', '0.03, -0.45, -1.05');
+                    textBox.setAttribute('width', '1');
+                    textBox.setAttribute('height', '0.279');
+                    textBox.setAttribute('material', 'shader: flat');
+
+	                camView.appendChild(textBox);
                 }
             }
         });
