@@ -65,5 +65,15 @@ function startQ(){
 }
 
 function dialogueStart(){
+	var camView = document.querySelector('#camera');
+	var textBox = document.createElement("a-image");
 
+	textBox.setAttribute('id', 'dialogue');
+	textBox.setAttribute('src', '#tb1');
+	textBox.setAttribute('position', '0.03, -0.4, -1.05');
+	textBox.setAttribute('width', '1');
+	textBox.setAttribute('height', '0.279');
+	textBox.setAttribute('material', 'shader: flat');
+
+	camView.appendChild(textBox);
 }

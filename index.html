@@ -85,7 +85,7 @@
                     qw.setAttribute("visible", false);
                     buttAccept();
                     compRemoval();
-                    dialogueStart();
+                    setTimeout(dialogueStart, 350);
                 }
             }
         });
@@ -213,7 +213,7 @@
 
             <a-entity id="rig" position="0 -1.6 1">
                 <a-camera look-controls wasd-controls-enabled="false" id="camera">
-                    <a-image id="dialogue" src="#tb1" position="0.03, -0.3, -1.05"
+                    <a-image id="dialogue" src="#tb1" position="0.03, -0.4, -1.05"
                       width="1" height="0.279" material="shader: flat"></a-image>
                 </a-camera>
             </a-entity>
