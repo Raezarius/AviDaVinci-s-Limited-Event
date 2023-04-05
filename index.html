@@ -86,8 +86,8 @@
                     qw.setAttribute("visible", false);
                     buttAccept();
                     counter+=1;
-                    compRemoval();
                     setTimeout(dialogueStart, 350);
+                    compRemoval();
                 }
             }
         });
@@ -153,12 +153,13 @@
         AFRAME.registerComponent('diaLogic', {
             events: {
                 click: function (evt){
-                    var sceneTouch = this.el;
+                    var camRay = document.querySelector('#camera');
                     var tBox = document.querySelector('#dialogue')
                     mOverSFX();
                     if(currentNum == 3){
-                        sceneTouch.removeAttribute('diaLogic', '');
-                        sceneTouch.removeAttribute('class', 'raycastable');
+                        camRay.removeAttribute('class', 'raycastable');
+                        tBox.removeAttribute('diaLogic', '');
+                        tBox.removeAttribute('class', 'raycastable');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
                         return;

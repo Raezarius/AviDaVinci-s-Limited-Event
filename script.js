@@ -67,8 +67,10 @@ function startQ(){
 function dialogueStart(){
 	var camView = document.querySelector('#camera');
 	var textBox = document.createElement("a-image");
-	var sceneClick = document.querySelector('a-scene');
+	// var sceneClick = document.querySelector('a-scene');
 
+	textBox.setAttribute('diaLogic', '');
+	textBox.setAttribute('class', 'raycastable');
 	textBox.setAttribute('id', 'dialogue');
 	textBox.setAttribute('src', '#tb1');
 	textBox.setAttribute('position', '0.03, -0.45, -1.05');
@@ -77,6 +79,7 @@ function dialogueStart(){
 	textBox.setAttribute('material', 'shader: flat');
 
 	camView.appendChild(textBox);
-	sceneClick.setAttribute('diaLogic', '');
-	sceneClick.setAttribute('class', 'raycastable');
+	camView.setAttribute('class', 'raycastable');
+	// sceneClick.setAttribute('diaLogic', '');
+	// sceneClick.setAttribute('class', 'raycastable');
 }
