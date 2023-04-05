@@ -156,7 +156,8 @@
                     var tBox = document.querySelector('#dialogue')
                     mOverSFX();
                     if(currentNum == 3){
-                        sceneTouch.removeAttribute('diaLogic');
+                        sceneTouch.removeAttribute('diaLogic', '');
+                        sceneTouch.removeAttribute('class', 'raycastable');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
                         return;

@@ -78,4 +78,5 @@ function dialogueStart(){
 
 	camView.appendChild(textBox);
 	sceneClick.setAttribute('diaLogic', '');
+	sceneClick.setAttribute('class', 'raycastable');
 }
