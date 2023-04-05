@@ -153,11 +153,12 @@
         AFRAME.registerComponent('diaLogic', {
             events: {
                 click: function (evt){
-                    var camRay = document.querySelector('#camera');
+                    var bg = document.querySelector('a-sky');
                     var tBox = document.querySelector('#dialogue')
                     mOverSFX();
                     if(currentNum == 3){
-                        camRay.removeAttribute('class', 'raycastable');
+                        bg.removeAttribute('class', 'raycastable');
+                        bg.removeAttribute('diaLogic', '');
                         tBox.removeAttribute('diaLogic', '');
                         tBox.removeAttribute('class', 'raycastable');
                         acceptQuest();
