@@ -152,10 +152,11 @@
         AFRAME.registerComponent('diaLogic', {
             events: {
                 click: function (evt){
-                    var tBox = this.el;
+                    var sceneTouch = this.el;
+                    var tBox = document.querySelector('#dialogue')
                     mOverSFX();
                     if(currentNum == 3){
-                        tBox.removeAttribute('diaLogic');
+                        sceneTouch.removeAttribute('diaLogic');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
                         return;
