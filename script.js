@@ -62,3 +62,7 @@ function startQ(){
 	scene.removeChild(delThis);
 	document.querySelector('#followText').setAttribute('visible', true);
 }
+
+function dialogueStart(){
+	
+}

@@ -81,7 +81,11 @@
                 },
 
                 click: function (evt){
+                    var qw = document.querySelector("#qwImage");
+                    qw.setAttribute("visible", false);
                     buttAccept();
+                    compRemoval();
+                    dialogueStart();
                 }
             }
         });
@@ -106,6 +110,8 @@
             }
         });
 
+        var counter = 0;
+
         AFRAME.registerComponent('shake', {
         init: function () {
             window.addEventListener('devicemotion', this.onDeviceMotion.bind(this));
@@ -123,16 +129,21 @@
 
             // Check if the total acceleration is above a certain threshold
             if (totalAcceleration > 30) {
-                // Trigger an event or update the scene here
-                var qw = document.querySelector("#qwImage"); 
-                var st = document.querySelector("#followText");
-                if(qw.object3D.visible == false){
-                    st.setAttribute("visible", false);
-                    qw.setAttribute("visible", true);
-                    compAcquisition();
-                    openWindow();
+                if(counter == 0){
+                    var qw = document.querySelector("#qwImage"); 
+                    var st = document.querySelector("#followText");
+                    if(qw.object3D.visible == false){
+                        st.setAttribute("visible", false);
+                        qw.setAttribute("visible", true);
+                        compAcquisition();
+                        openWindow();
+                    }
+                    else{};
                 }
-                else{};
+
+                if(counter == 1){
+                    //put a reminder.png here
+                }
                 }
             }
         });
@@ -150,6 +161,9 @@
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
                 <!-- <img id="moogle" src="resources/GIF.gif"> -->
+                <!-- <img id="tb1" src="resources/textboxes/textbox1.png">
+                <img id="tb2" src="resources/textboxes/textbox2.png">
+                <img id="tb3" src="resources/textboxes/textbox3.png"> -->
                 <img id="sky" src="resources/skyMoon.jpg">
 
                 <video id="moogle" autoplay webkit-playsinline playsinline loop="true" src="resources/MP4.mp4"></video>
@@ -182,10 +196,14 @@
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
 
-            <a-text class="guideTextY" id="LUp" position="-0.5, -1, 1" rotation="-90, 0, 0" value="Look Up!"
+            <!-- <a-entity class="raycastable" id="tBox1" htmlembed="ppu: 256">
+                <img src="resources/textboxes/textbox1.png">
+            </a-entity> -->
+
+            <a-text class="guideTextY" id="LUp" position="-0.5, -1.3, 1" rotation="-90, 0, 0" value="Look Up!"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
-            <a-text class="guideTextY" id="LDown" position="-0.5, 1, 1" rotation="90, 0, 0" value="Look Down!"
+            <a-text class="guideTextY" id="LDown" position="-0.5, 1.3, 1" rotation="90, 0, 0" value="Look Down!"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-text class="guideTextX" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="Look Right!"
@@ -196,7 +214,11 @@
 
                                                     <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
             <a-entity id="rig" position="0 -1.6 1">
-                <a-camera look-controls wasd-controls-enabled="false" id="camera"></a-camera>
+                <a-camera look-controls wasd-controls-enabled="false" id="camera">
+                    <a-entity class="raycastable" id="tBox1" htmlembed="ppu: 256">
+                        <img src="resources/textboxes/textbox1.png">
+                    </a-entity>
+                </a-camera>
             </a-entity>
         </a-scene>
     </body>
