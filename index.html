@@ -182,7 +182,16 @@
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
 
-            <a-text class="guideText" position="0, 0, 0" rotation="-90, 0, 0" value="Look Up!"
+            <a-text class="guideText" id="LUp" position="-0.5, -1, 1" rotation="-90, 0, 0" value="Look Up!"
+              color="white" font="kelsonsans"></a-text>
+
+            <a-text class="guideText" id="LDown" position="-0.5, 1, 1" rotation="90, 0, 0" value="Look Down!"
+              color="white" font="kelsonsans"></a-text>
+
+            <a-text class="guideText" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="Look Right!"
+              color="white" font="kelsonsans"></a-text>
+
+            <a-text class="guideText" id="LLeft" position="1.5, 0, 0.5" rotation="0, -90, 0" value="Look Left!"
               color="white" font="kelsonsans"></a-text>
 
                                                     <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
