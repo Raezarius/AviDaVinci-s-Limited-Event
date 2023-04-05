@@ -183,10 +183,10 @@
             </a-entity>
 
             <a-text class="guideTextY" id="LUp" position="-0.5, -1, 1" rotation="-90, 0, 0" value="Look Up!"
-              color="white" font="kelsonsans"></a-text>
+              color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-text class="guideTextY" id="LDown" position="-0.5, 1, 1" rotation="90, 0, 0" value="Look Down!"
-              color="white" font="kelsonsans"></a-text>
+              color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-text class="guideTextX" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="Look Right!"
               color="white" font="kelsonsans"></a-text>
@@ -286,6 +286,9 @@
         }
         });
 
-        document.getElementsByClassName('guideTextY').setAttribute('y-axis-track', '');
+        var els = document.getElementsByClassName("guideTextY");
+        [].forEach.call(els, function (el) {
+            el.setAttribute('y-axis-track', '');
+        });
     </script>
 </html>
