@@ -147,6 +147,24 @@
                 }
             }
         });
+
+        var currentNum = 1;
+        AFRAME.registerComponent('diaLogic', {
+            events: {
+                click: function (evt){
+                    var tBox = this.el;
+                    if(currentNum == 3){
+                        tBox.removeAttribute('diaLogic');
+                        acceptQuest();
+                        tBox.setAttribute('visible', false);
+                        return;
+                    }
+                    tBox.removeAttribute('src', '#tb' + `${currentNum}`);
+                    currentNum+=1;
+                    tBox.setAttribute('src', 'tb'+`${currentNum}`);
+                }
+            }
+        });
     </script>
 
     <body>
@@ -194,10 +212,6 @@
             <a-entity class="raycastable" id="butt" htmlembed='ppu:256'>
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
-
-            <!-- <a-entity class="raycastable" id="tBox1" htmlembed="ppu: 256">
-                <img src="resources/textboxes/textbox1.png">
-            </a-entity> -->
 
             <a-text class="guideTextY" id="LUp" position="-0.5, -1.3, 1" rotation="-90, 0, 0" value="Look Up!"
               color="white" font="kelsonsans" opacity="0"></a-text>
