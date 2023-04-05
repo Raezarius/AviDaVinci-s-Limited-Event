@@ -189,10 +189,10 @@
               color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-text class="guideTextX" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="Look Right!"
-              color="white" font="kelsonsans"></a-text>
+              color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-text class="guideTextX" id="LLeft" position="1.5, 0, 0.5" rotation="0, -90, 0" value="Look Left!"
-              color="white" font="kelsonsans"></a-text>
+              color="white" font="kelsonsans" opacity="0"></a-text>
 
                                                     <!-- next up we gotta make the 4 signs pointing to the center of the scene -->
             <a-entity id="rig" position="0 -1.6 1">
@@ -266,7 +266,7 @@
 
             var gText = this.el;
 
-            var initialRotation = gText.getAttribute('rotation').y;
+            var initialRotation = gText.getAttribute('rotation').x;
             var cameraRotation = cameraEl.getAttribute('rotation').x;
 
             // Calculate the rotation difference between the camera and the text entity
@@ -286,9 +286,39 @@
         }
         });
 
-        var els = document.getElementsByClassName("guideTextY");
-        [].forEach.call(els, function (el) {
+        AFRAME.registerComponent('x-axis-track', {
+        tick: function () {
+
+            var gText = this.el;
+
+            var initialRotation = gText.getAttribute('rotation').y;
+            var cameraRotation = cameraEl.getAttribute('rotation').y;
+
+            // Calculate the rotation difference between the camera and the text entity
+            var rotationDifference = Math.abs(cameraRotation - initialRotation);
+
+            // If the rotation difference is within the threshold, update the opacity
+            if (rotationDifference <= rotationThreshold) {
+                var opacity = initialOpacity + (rotationDifference / rotationThreshold);
+                gText.setAttribute('opacity', opacity);
+            }
+            else if (rotationDifference >= 90 && rotationDifference <= rotationThreshold){
+                gText.setAttribute('opacity', 1);
+            } 
+            else {
+                gText.setAttribute('opacity', initialOpacity);
+            }  
+        }
+        });
+
+        var elsY = document.getElementsByClassName("guideTextY");
+        [].forEach.call(elsY, function (el) {
             el.setAttribute('y-axis-track', '');
+        });
+
+        var elsX = document.getElementsByClassName("guideTextX");
+        [].forEach.call(elsX, function (el) {
+            el.setAttribute('x-axis-track', '');
         });
     </script>
 </html>
