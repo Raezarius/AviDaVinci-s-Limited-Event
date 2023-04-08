@@ -2,6 +2,7 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
+			x.onended = openForms();
 }
 
 function declineQuest(){
@@ -52,7 +53,8 @@ function compRemoval(){
 }
 
 function openForms(){
-	window.location.href = "https://www.youtube.com";
+	// window.location.href = "https://www.youtube.com";
+	window.open('https://www.youtube.com', '_blank', 'noopener');
 }
 
 function startQ(){

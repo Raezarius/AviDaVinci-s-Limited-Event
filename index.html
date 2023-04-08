@@ -164,7 +164,7 @@
                         bg.removeAttribute('diaLogic', '');
                         touchNPC.removeAttribute('class', 'raycastable');
                         touchNPC.removeAttribute('diaLogic', '');
-                        tBox.removeAttribute('diaLogic', '');                       //next up, quest accepted animation to the timing of the jingle, around ~~3.5sec ish
+                        tBox.removeAttribute('diaLogic', '');                       //next up, quest accepted animation to the timing of the jingle, onended!
                         tBox.removeAttribute('class', 'raycastable');
                         acceptQuest();
                         tBox.setAttribute('visible', false);
@@ -236,16 +236,16 @@
                 <button class="button raycastable" onclick="startQ()">Start</button>
             </a-entity>
 
-            <a-text class="guideTextY" id="LUp" position="-0.5, -1.3, 1" rotation="-90, 0, 0" value="Look Up!"
+            <a-text class="guideTextY" id="LUp" position="-0.5, -1.3, 1" rotation="-90, 0, 0" value="↑ Front ↑"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
-            <a-text class="guideTextY" id="LDown" position="-0.5, 1.3, 1" rotation="90, 0, 0" value="Look Down!"
+            <a-text class="guideTextY" id="LDown" position="-0.5, 1.3, 1" rotation="90, 0, 0" value="↓ Front ↓"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
-            <a-text class="guideTextX" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="Look Right!"
+            <a-text class="guideTextX" id="LRight" position="-1.5, 0, 1.5" rotation="0, 90, 0" value="→ Front →"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
-            <a-text class="guideTextX" id="LLeft" position="1.5, 0, 0.5" rotation="0, -90, 0" value="Look Left!"
+            <a-text class="guideTextX" id="LLeft" position="1.5, 0, 0.5" rotation="0, -90, 0" value="← Front ←"
               color="white" font="kelsonsans" opacity="0"></a-text>
 
             <a-entity id="rig" position="0 -1.6 1">
