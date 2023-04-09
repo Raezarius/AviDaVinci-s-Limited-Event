@@ -2,7 +2,7 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
-			var w = window.open('', 'w2', 'noopener');
+			var w = window.open('', '_blank');
 			x.onended = function(){
 				openForms(w);
 			};
