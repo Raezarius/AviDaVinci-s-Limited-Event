@@ -3,7 +3,9 @@ function acceptQuest(){
 			x.currentTime = 0;
 			x.play();
 			// var w = window.open('', '_blank');		//new tab takes over focus, need to find a way to open forms after delay
-			x.onended = function(){
+			let expires = new Date().getTime() + (60 * 1000);
+			document.cookie = `status=returnee; expires=${new Date(expires).toUTCString()}`;
+			x.onended = function(){						//have to drop, reusing the old replace current window
 				openForms();
 			};
 }
