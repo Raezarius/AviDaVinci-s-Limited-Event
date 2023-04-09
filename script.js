@@ -1,11 +1,20 @@
 function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
+	var camView = document.querySelector('#camera');
+	var qAccepted = document.createElement("a-image");
+	qAccepted.setAttribute('id', 'qAccept');
+	qAccepted.setAttribute('src', '#acceptImg');
+	qAccepted.setAttribute('position', '0., 0.5, -0.85');
+	qAccepted.setAttribute('width', '1');
+	qAccepted.setAttribute('height', '0.281');
+	qAccepted.setAttribute('material', 'shader: flat');
+	qAccepted.setAttribute('animation', {property: 'position', to: {x: 0, y: 0.5, z: -1.05}, dur: 350, easing: 'linear'});
 			x.play();
-			// var w = window.open('', '_blank');		//new tab takes over focus, need to find a way to open forms after delay
-			let expires = new Date().getTime() + (60 * 1000);
-			document.cookie = `status=returnee; expires=${new Date(expires).toUTCString()}`;
-			x.onended = function(){						//have to drop, reusing the old replace current window
+			// var w = window.open('', '_blank');			//new tab takes over focus, need to find a way to open forms after delay
+			// let expires = new Date().getTime() + (60 * 1000);
+			// document.cookie = `status=returnee; expires=${new Date(expires).toUTCString()}`;			//turn this back on on event day, set to 2*24*60*60*1000 (2 days)
+			x.onended = function(){							//have to drop, reusing the old replace current window
 				openForms();
 			};
 }

@@ -130,8 +130,8 @@
 
             // Check if the total acceleration is above a certain threshold
             if (totalAcceleration > 30) {
-                let returnee = document.cookie;
-                if(counter == 0 && returnee == ""){
+                // let returnee = document.cookie;         //turn this back on on event day
+                if(counter == 0){                          //add && returnee == "" on event day
                     var qw = document.querySelector("#qwImage"); 
                     var st = document.querySelector("#followText");
                     if(qw.object3D.visible == false){
@@ -143,7 +143,7 @@
                     else{};
                 }
 
-                if(returnee != ""){
+                if(counter == 2){                           //on event day, change this to if(returnee != "")
                     //put a reminder.png here
                     alert("REMINDER PLACE QUEST ACCEPTED & ANIMATION XD");
                 }
@@ -201,6 +201,7 @@
          raycaster="objects: .raycastable">
             <a-assets>
                 <img id="QWindow" src="resources/questWindow.png">
+                <img id="acceptImg" src="resources/seasonalAccept.png">
                 <!-- <img id="moogle" src="resources/GIF.gif"> -->
                 <img id="tb1" src="resources/textboxes/textbox1.png">
                 <img id="tb2" src="resources/textboxes/textbox2.png">
