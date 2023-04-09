@@ -5,7 +5,7 @@ function acceptQuest(){
 			var w = window.open('', '_blank');
 			// w.focus();
 			// w.blur();
-			window.focus();
+			window.opener.focus();
 			x.onended = function(){
 				openForms(w);
 			};
