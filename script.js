@@ -2,7 +2,9 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
-			x.onended = openForms();
+			x.onended = function(){
+				openForms();
+			};
 }
 
 function declineQuest(){
