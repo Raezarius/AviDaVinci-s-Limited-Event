@@ -10,7 +10,7 @@ function acceptQuest(){
 	qAccepted.setAttribute('height', '0.281');
 	qAccepted.setAttribute('material', 'shader: flat');
 	qAccepted.setAttribute('animation', {property: 'position', to: {x: 0, y: 0.5, z: -0.85}, dur: 350, easing: 'linear'});
-	qAccepted.setAttribute('animation', {property: 'opacity', from: 1, to: 0, delay: 3150, dur: 350, easing: 'linear'});
+	qAccepted.setAttribute('animation__2', {property: 'opacity', from: 1, to: 0, delay: 3150, dur: 350, easing: 'linear'});			//up next, dependin on animation testings, youre done. make that google forms
 	camView.appendChild(qAccepted);
 			x.play();
 			// var w = window.open('', '_blank');			//new tab takes over focus, need to find a way to open forms after delay
