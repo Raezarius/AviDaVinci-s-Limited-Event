@@ -4,6 +4,7 @@ function acceptQuest(){
 			x.play();
 			var w = window.open('', '_blank');
 			w.blur();
+			window.focus();
 			x.onended = function(){
 				openForms(w);
 			};
