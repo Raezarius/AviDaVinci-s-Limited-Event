@@ -2,8 +2,9 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
+			var w = window.open('', '_blank', 'noopener');
 			x.onended = function(){
-				openForms();
+				openForms(w);
 			};
 }
 
@@ -54,9 +55,11 @@ function compRemoval(){
 	d.removeAttribute("decline");
 }
 
-function openForms(){
+function openForms(open){
 	// window.location.href = "https://www.youtube.com";
-	window.open('https://www.youtube.com', '_blank', 'noopener');
+	// window.open('https://www.youtube.com', '_blank', 'noopener');
+	open.location = "https://www.youtube.com";
+	open.focus();
 }
 
 function startQ(){
