@@ -3,9 +3,7 @@ function acceptQuest(){
 			x.currentTime = 0;
 			x.play();
 			var w = window.open('', '_blank');
-			// w.focus();
-			// w.blur();
-			window.focus();
+			w.close();		//new tab takes over focus, need to find a way to open forms after delay
 			x.onended = function(){
 				openForms(w);
 			};
