@@ -2,7 +2,8 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
-			var w = window.open('', '_blank').blur();
+			var w = window.open('', '_blank');
+			w.blur();
 			window.focus();
 			x.onended = function(){
 				openForms(w);
