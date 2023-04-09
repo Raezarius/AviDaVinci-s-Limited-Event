@@ -2,10 +2,9 @@ function acceptQuest(){
     let x = document.getElementById("qAccept");
 			x.currentTime = 0;
 			x.play();
-			var w = window.open('', '_blank');
-			w.close();		//new tab takes over focus, need to find a way to open forms after delay
+			// var w = window.open('', '_blank');		//new tab takes over focus, need to find a way to open forms after delay
 			x.onended = function(){
-				openForms(w);
+				openForms();
 			};
 }
 
@@ -56,11 +55,11 @@ function compRemoval(){
 	d.removeAttribute("decline");
 }
 
-function openForms(open){
-	// window.location.href = "https://www.youtube.com";
+function openForms(){
+	window.location.href = "https://www.youtube.com";
 	// window.open('https://www.youtube.com', '_blank', 'noopener');
-	open.location = "https://www.youtube.com";
-	open.focus();
+	// open.location = "https://www.youtube.com";
+	// open.focus();
 }
 
 function startQ(){
