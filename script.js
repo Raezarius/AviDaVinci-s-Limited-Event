@@ -5,12 +5,12 @@ function acceptQuest(){
 	var qAccepted = document.createElement("a-image");
 	qAccepted.setAttribute('id', 'qAccept');
 	qAccepted.setAttribute('src', '#acceptImg');
-	qAccepted.setAttribute('position', '0., 0.5, -0.65');
+	qAccepted.setAttribute('position', '0., 0.5, -0.75');
 	qAccepted.setAttribute('width', '1');
 	qAccepted.setAttribute('height', '0.281');
 	qAccepted.setAttribute('material', 'shader: flat');
-	qAccepted.setAttribute('animation', {property: 'position', to: {x: 0, y: 0.5, z: -0.85}, dur: 350, easing: 'linear'});
-	qAccepted.setAttribute('animation__2', {property: 'opacity', from: 1, to: 0, delay: 3150, dur: 350, easing: 'linear'});			//up next, dependin on animation testings, youre done. make that google forms
+	qAccepted.setAttribute('animation', {property: 'position', to: {x: 0, y: 0.5, z: -0.85}, dur: 250, easing: 'linear'});
+	qAccepted.setAttribute('animation__2', {property: 'opacity', from: 1, to: 0, delay: 3350, dur: 350, easing: 'linear'});			//up next, dependin on animation testings, youre done. make that google forms
 	camView.appendChild(qAccepted);
 			x.play();
 			// var w = window.open('', '_blank');			//new tab takes over focus, need to find a way to open forms after delay
