@@ -10,6 +10,7 @@ function acceptQuest(){
 	qAccepted.setAttribute('height', '0.281');
 	qAccepted.setAttribute('material', 'shader: flat');
 	qAccepted.setAttribute('animation', {property: 'position', to: {x: 0, y: 0.5, z: -1.05}, dur: 350, easing: 'linear'});
+	camView.appendChild(qAccepted);
 			x.play();
 			// var w = window.open('', '_blank');			//new tab takes over focus, need to find a way to open forms after delay
 			// let expires = new Date().getTime() + (60 * 1000);
