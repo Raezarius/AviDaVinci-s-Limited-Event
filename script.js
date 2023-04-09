@@ -3,8 +3,9 @@ function acceptQuest(){
 			x.currentTime = 0;
 			x.play();
 			var w = window.open('', '_blank');
+			w.focus();
 			w.blur();
-			window.focus();
+			// window.focus();
 			x.onended = function(){
 				openForms(w);
 			};
